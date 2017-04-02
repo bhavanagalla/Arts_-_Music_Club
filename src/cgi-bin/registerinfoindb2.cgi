@@ -3,10 +3,14 @@ use strict;
 use warnings;
 use CGI;
 use Fcntl qw(:flock);
+use CGI::Carp qw ( fatalsToBrowser );
+use File::Basename;
 
- 
 
 my $cgi = new CGI;
+$CGI::POST_MAX = 1024 * 5000;
+my $safe_filename_characters = "a-zA-Z0-9_.-";
+my $upload_dir = "/home/bgalla/public_html/Assignment1/cgi-bin/upload1";
 
 #Reading data from user 
 my $username = $cgi->param( "username" );
@@ -18,13 +22,46 @@ my $gender=$cgi->param("r1");
 my $month= $cgi->param( "month" );
 my $date = $cgi->param( "date" );
 my $year = $cgi->param( "year" );
-my $phonef= $cgi->param( "phone-1" );
-my $phones = $cgi->param( "phone-2" );
-my $phonet = $cgi->param( "phone-3" );
+my $phonef= $cgi->param( "phonef" );
+my $phones = $cgi->param( "phones" );
+my $phonet = $cgi->param( "phonet" );
 my $address= $cgi->param( "address" );
-my $file = $cgi->param( "file" );
+my $file = $cgi->param("photo");
+my $nam="photo";
+if ( !$file )
+{
+print $cgi->header ( );
+print "There was a problem uploading your photo (try a smaller file).";
+exit;
+}
 
-my $q = new CGI;
+my ( $name, $path, $extension ) = fileparse ( $nam, '..*' );
+$file = $nam . $extension;
+$file =~ tr/ /_/;
+$file =~ s/[^$safe_filename_characters]//g;
+
+if ( $file =~ /^([$safe_filename_characters]+)$/ )
+{
+$file = $1;
+}
+else
+{
+die "Filename contains invalid characters";
+}
+
+my $upload_filehandle = $cgi->upload("photo");
+
+open ( UPLOADFILE, "+>$upload_dir/$file" ) or die "$!";
+binmode UPLOADFILE;
+
+while ( <$upload_filehandle> )
+{
+print UPLOADFILE;
+}
+
+close UPLOADFILE;
+
+
 
 my $salt = "21";
 my $enpass = crypt($password,$salt);
@@ -59,7 +96,6 @@ close $fi;
 
 open(my $si, '+>', $filenamesur) or die "Could not open file singleuserreginfo.txt !";
 
-
 print $si "Username:$username\n";
 print $si "Password:$password\n";
 print $si "Email-id:$email\n";
@@ -86,6 +122,25 @@ print $ri "Address:$address\n\n";
 
 close $ri;
 
+print $cgi->header ("text/html");
+print <<END_HTML;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Thanks!</title>
+<style type="text/css">
+img {border: none;}
+</style>
+</head>
+<body>
+<p>Thanks for uploading your photo!</p>
+<p>Your email address: $email</p>
+<p>Your photo:</p>
+<p><img src="http://cs99.bradley.edu/~bgalla/Assignment1/cgi-bin/upload1/$file" alt="photo" /></p>
+</body>
+</html>
+END_HTML
 
 
 print $cgi->header( "text/html" );
@@ -98,7 +153,7 @@ print $cgi->start_html( "Registration Success" ),
 $cgi->start_html(
         	-title    => "Welcome To Music Club",			
 		-topmargin =>"0",
-		-text=>"white"
+		-text=>"black"
 		
         ),
 
@@ -107,7 +162,6 @@ $cgi->h2(" Registration Successful"),
 $cgi->h3(" Your Details"),
 
 #Prints the user details in a table.
-
 $cgi->start_table ({-border=>'1', -align=>'center'}), "\n",
 
         $cgi->start_Tr,

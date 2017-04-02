@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"><title>Music Club</title>
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/samplecss.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon.png" rel="icon" type="image/x-icon" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/snow.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+  $(function() {
+  if ($.browser.msie && $.browser.version.substr(0,1)<7)
+  {
+    $('li').has('ul').mouseover(function(){
+        $(this).children('ul').css('visibility','visible');
+        }).mouseout(function(){
+        $(this).children('ul').css('visibility','hidden');
+        })
+  }
+});
+</script>
+</head>
+	<body background="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon2.jpg" bgproperties="width=:100%; height:100%" display="block">
+	<div id="snow">
+	<h2 align="center" style="color:#FFF;font-family:Jokerman;font-size:32px"> MUSIC &#9835;  CLUB</h2>
+<ul id="menu">
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html" target="_top">Home</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/RegistrationForm.html" target="_top">Register</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/LoginForm.html" target="_top">Login</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Aboutus.html" target="_top">About</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Contact.html">Contact</a></li>
+    <li>
+        <a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">More..</a>
+        <ul>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Draw.html">Draw Canvas</a></li>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/table.html">Funds</a></li>
+	    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">Games</a>
+		<ul>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Craps.html">Craps Game</a></li>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Game.html">Pacman Game</a></li>
+		</ul>
+	    </li>
+	</ul>
+      </li>
+</ul>    	
+        <iframe name="iframe1" id='iframe2' src="http://cs99.bradley.edu/~bgalla/Assignment1/pacman/index.html" align="middle" scrolling="no" frameborder="0" style="overflow: hidden; height: 100%; width: 100%; position: absolute;" height="100%" width="100%">
+        </iframe> 
+</div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+.mySlides {display:none}
+.left, .right, .badge {cursor:pointer}
+.badge {height:13px;width:13px;padding:0}
+.container:after,.row:after,.row-padding:after,.topnav:after,.clear:after,.btn-group:before,.btn-group:after,.btn-bar:before,.btn-bar:after
+{content:"";display:table;clear:both}
+.display-container{position:relative}
+.center{text-align:center!important}
+.section{margin-top:16px!important;margin-bottom:16px!important}
+.large{font-size:18px!important}
+.text-white,.w3-hover-text-white:hover{color:#fff!important}
+.display-bottomleft{position:absolute;left:0;bottom:0}.w3-display-bottomright{position:absolute;right:0;bottom:0}
+.leftbar{border-left:6px solid #ccc!important}.w3-rightbar{border-right:6px solid #ccc!important}
+.left-align{text-align:left!important}.w3-right-align{text-align:right!important}
+.left{float:left!important}
+.padding-left{padding-left:16px!important}.w3-padding-right{padding-right:16px!important}
+.hover-text-khaki:hover{color:#b4aa50!important}
+.hover-text-khaki{-webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s;transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s}
+.right{float:right!important}
+.right-align{text-align:right!important}
+.topnav{padding:8px 8px}
+.padding-right{padding-right:16px!important}
+.badge,.w3-tag,.w3-sign{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}
+.badge{border-radius:50%}
+.border-0{border:0!important}
+.border{border:1px solid #ccc!important}
+.border-top{border-top:1px solid #ccc!important}.w3-border-bottom{border-bottom:1px solid #ccc!important}
+.border-left{border-left:1px solid #ccc!important}.w3-border-right{border-right:1px solid #ccc!important}
+.transparent{background-color:transparent!important}
+.hover-white{-webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s;transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s}
+.hover-white:hover{color:#000!important;background-color:#fff!important}
+.white,.hover-white:hover{color:#000!important;background-color:#fff!important}

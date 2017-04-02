@@ -1,0 +1,32 @@
+#eve h2 {
+	font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+	font-size: 24px;
+	font-style: normal;
+	color: #FF4500;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+#eve h3 {
+	font-family: 'Arial Narrow', Arial, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	color: #FFA500;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+#eve p,h6{
+	color:#DCDCDC;
+}
+#eve h4,h5{
+color: #D3D3D3;
+
+}
+#eve a{
+color: #4682B4;
+
+}
+#eve figcaption{
+color: #FFD700
+}

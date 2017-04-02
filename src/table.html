@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Music Club</title>
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/samplecss.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/snow.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon.png" rel="icon" type="image/x-icon" />
+
+<script type="text/javascript">
+  $(function() {
+  if ($.browser.msie && $.browser.version.substr(0,1)<7)
+  {
+    $('li').has('ul').mouseover(function(){
+        $(this).children('ul').css('visibility','visible');
+        }).mouseout(function(){
+        $(this).children('ul').css('visibility','hidden');
+        })
+  }
+});
+</script>
+
+<style type = "text/css">
+body {
+        overflow-x:hidden;
+	}
+
+ table { 
+	width: 30%;
+    	margin-left: auto;
+    	margin-right: auto;margin-top:230px;align:center;border-collapse: collapse;background-color: #66CDAA; 
+	}
+ table, td, th {
+	 border: 1px solid black;
+	 padding: 4px;
+	}
+ th { 
+	text-align: left;
+	color: white;
+	background-color: #556B2F ; 
+	}
+ tr.oddrow { 
+	background-color:#8FBC8F;
+	 }
+ </style>
+<script>
+
+ var amount; // current amount of money
+ var principal = 1000.00; // principal amount
+ var rate = 0.25; // interest rate
+ document.writeln("<table>" ); // begin the table
+ document.writeln(
+ "<caption></caption>" );
+ document.writeln(
+ "<thead><tr><th>Year</th>" ); // year column heading
+ document.writeln(
+ "<th>Amount of funds invested</th>" ); // amount column heading
+ document.writeln( "</tr></thead><tbody>" );
+
+ // output a table row for each year
+	for ( var year = 1; year <= 15; ++year )
+
+ {
+ amount = principal * Math.pow( 1.0 + rate, year ) ;
+
+ if ( year %2 !== 0)
+ document.writeln( "<tr class='oddrow'><td>" + year +
+ "</td><td>" + amount.toFixed(2) + "</td></tr>" );
+ else
+ document.writeln( "<tr><td>" + year +
+ "</td><td>" + amount.toFixed(2) + "</td></tr>" );
+ } //end for
+
+ document.writeln( "</tbody></table>" );
+
+ </script>
+  </head>
+<body background="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon2.jpg" bgproperties="background-size:100%"; display="block">
+<div id="snow">
+<h2 align="center" style="color:#FFF;font-family:Jokerman;font-size:32px"> MUSIC &#9835;  CLUB</h2>
+<ul id="menu">
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html" target="_top">Home</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/RegistrationForm.html" target="_top">Register</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/LoginForm.html" target="_top">Login</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Aboutus.html" target="_top">About</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Contact.html">Contact</a></li>
+    <li>
+        <a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">More..</a>
+        <ul>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Draw.html">Draw Canvas</a></li>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/table.html">Funds</a></li>
+	    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">Games</a>
+		<ul>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Craps.html">Craps Game</a></li>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Game.html">Pacman Game</a></li>
+		</ul>
+	    </li>
+	</ul>
+      </li>
+</ul>
+	<h3 align="center" style="color:#808000;font-family: "Arial Narrow",sans-serif;font-size:14px">Music Club funds to provide musical opportunities for all ages:<em>
+	professional and amateur musicians, benefactors, volunteers, music lovers, music teachers, music students, and supportive parents</h3><br>
+
+</div>
+<div>
+</body>
+ </html>

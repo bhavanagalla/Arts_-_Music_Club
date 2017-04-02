@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="utf-8">
+ <title>Simple Drawing Program</title>
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/samplecss.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/snow.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon.png" rel="icon" type="image/x-icon" />
+<script src = "http://cs99.bradley.edu/~bgalla/Assignment1/js/RandomPicture.js"></script>
+<script src = "http://cs99.bradley.edu/~bgalla/Assignment1/js/draw.js"></script>
+	<style>
+	#.centre {
+    	margin-left: auto;
+    	margin-right: auto;
+    	display: block;
+	top: 20px;
+	}
+	</style>
+
+<script type="text/javascript">
+  $(function() {
+  if ($.browser.msie && $.browser.version.substr(0,1)<7)
+  {
+    $('li').has('ul').mouseover(function(){
+        $(this).children('ul').css('visibility','visible');
+        }).mouseout(function(){
+        $(this).children('ul').css('visibility','hidden');
+        })
+  }
+});
+</script>
+     <style type = "text/css">
+         #canvas { width: 400px;
+                   border: 1px solid #999999;
+                   border-collapse: collapse }
+         td      { width: 4px;
+                   height: 4px }
+         th.key  { font-family: arial, helvetica, sans-serif;
+                   font-size: 12px; 
+                   border-bottom: 1px solid #999999 }
+      </style>
+      <script type = "text/javascript">
+         <!--
+         //initialization function to insert cells into the table
+         function createCanvas ()
+         {
+            var side = 100;
+            var tbody = document.getElementById( "tablebody" );
+          
+            for ( var i = 0; i < side; i++ )
+            {
+               var row = document.createElement( "tr" );
+               
+               for ( var j = 0; j < side; j++ )
+               {
+                  var cell = document.createElement( "td" );
+                  cell.onmousemove = processMouseMove;
+                  row.appendChild( cell );
+               } // end for
+
+               tbody.appendChild( row );
+            } // end for
+         } // end function createCanvas
+
+         // processes the onmousemove event
+         function processMouseMove( e )
+         {            
+            // get the event object from IE
+            if ( !e )
+               var e = window.event;
+
+            // turn the cell blue if the Ctrl key is pressed
+            if ( e.ctrlKey )
+               this.style.backgroundColor = "blue";
+         
+            // turn the cell red if the Shift key is pressed
+            if ( e.shiftKey )
+               this.style.backgroundColor = "red";
+         } // end function processMouseMove
+      </script>
+ </head>
+<body bgcolor="#222222" display="block" onload = "createCanvas()">
+	<div id="snow">
+
+<h2 align="center" style="color:#FFF;font-family:Jokerman;font-size:32px"> MUSIC &#9835;  CLUB</h2>
+<ul id="menu">
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html" target="_top">Home</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/RegistrationForm.html" target="_top">Register</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/LoginForm.html" target="_top">Login</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Aboutus.html" target="_top">About</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Contact.html">Contact</a></li>
+    <li>
+        <a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">More..</a>
+        <ul>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Draw.html">Draw Canvas</a></li>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/table.html">Funds</a></li>
+	    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">Games</a>
+		<ul>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Craps.html">Craps Game</a></li>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Game.html">Pacman Game</a></li>
+		</ul>
+	    </li>
+	</ul>
+      </li>
+</ul>
+      <table id = "canvas" class = "canvas" align="middle" style="margin-left:500px; margin-top:50px;"><tbody id = "tablebody">
+      <tr><th class = "key" colspan = "100" bgcolor="#CCCCCC">Hold <tt>ctrl</tt>
+         to draw blue. Hold <tt>shift</tt> to draw red.</th></tr>
+      </tbody></table>
+<div id="clockbox" style align="right"></div>
+</body>
+ </html>

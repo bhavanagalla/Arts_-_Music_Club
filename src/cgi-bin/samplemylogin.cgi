@@ -40,7 +40,7 @@ else
 	print $cgi->header( "text/html" ),
 	$cgi->start_html(
 		-title    => "Welcome To Music Club",
-       		-text=>"white"
+       		-text=>"black"
 		),
 	$cgi->h2("Sorry! Login Failed...Incorrect Username or Password..."),
 	$cgi->h2("Relogin"),
@@ -70,7 +70,7 @@ sub displayOtherHTMLPage {
 	$cgi->start_html(
         	-title    => "Welcome To Music Club",			
 		-topmargin =>"0",
-		-text=>"white"
+		-text=>"black"
 		
         ),
 	

@@ -1,39 +1,177 @@
-<!doctype html>
+<!DOCTYPE>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Login Form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Music Club</title>
+<style type="text/css">
+fieldset
+{
+	display:block;
+	padding-left:2px;
+	padding-right:2px;
+}
+input[type=submit],input[type=reset],input[type=button] {
+	margin-top: 0px;
+	border: 0;
+	border-radius: 2px;
+	color: white;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 0.7em;
+	color:#FFF;
+	letter-spacing: 1px;
+	background-color: #191614;
+	cursor:pointer;
+	outline: none;
+}
+</style>
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/events.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/samplecss.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon.png" rel="icon" type="image/x-icon" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/formscss.css" rel="stylesheet" type="text/css">
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/snow.css" rel="stylesheet" type="text/css" />
+ <script src = "http://cs99.bradley.edu/~bgalla/Assignment1/js/RandomPicture.js"></script>
+<script type="text/javascript">
+  $(function() {
+  if ($.browser.msie && $.browser.version.substr(0,1)<7)
+  {
+    $('li').has('ul').mouseover(function(){
+        $(this).children('ul').css('visibility','visible');
+        }).mouseout(function(){
+        $(this).children('ul').css('visibility','hidden');
+        })
+  }
+});
+</script>
+<script language="javascript">
+		function validate()
+			{
+				u=loginform.username.value;
+	   			p=loginform.password.value;
+				if(u=="")
+				{
+					alert("enter username");
+					return false;
+				}
+				else if(p=="")
+				{
+					alert("enter password");
+					return false;
+				}
+			}
+
+</script>
 
 </head>
-
-<body display="block">
+<body background="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon2.jpg" bgproperties="background-size:100%"; display="block">
+<div id="snow">
+<h2 align="center" style="color:#FFF;font-family:Jokerman;font-size:32px"> MUSIC &#9835;  CLUB</h2>
+<ul id="menu">
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html" target="_top">Home</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/RegistrationForm.html" target="_top">Register</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/LoginForm.html" target="_top">Login</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Aboutus.html" target="_top">About</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Contact.html">Contact</a></li>
+    <li>
+        <a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">More..</a>
+        <ul>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Draw.html">Draw Canvas</a></li>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/table.html">Funds</a></li>
+	    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">Games</a>
+		<ul>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Craps.html">Craps Game</a></li>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Game.html">Pacman Game</a></li>
+		</ul>
+	    </li>
+	</ul>
+      </li>
+</ul>
+<time><h6 id="demo" ></h6></time>
+			<script>
+				document.getElementById("demo").innerHTML = Date();
+			</script>
 <form name="loginform" method="post"  action="http://cs99.bradley.edu/~bgalla/Assignment1/cgi-bin/samplemylogin.cgi">
-			<fieldset>
-				<legend align="center"><h4 style="color:#CCC; font-family:Verdana,sans-serif; font-size:16px" >USER LOGIN FORM</h4></legend>
-                <table align="center" border="0" cellspacing="0">
-					<tr>
-                   		 <td align="center" valign="top"><label style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">USER NAME </label></td>
-						 <td><input type="text" name="username" placeholder="username" autofocus="autofocus" required="required"><br><br></td>
-                    </tr>
-                    <tr>
-						  <td align="center" valign="top"><label style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">PASSWORD </label></td>
-						  <td><input type="password" name="password" placeholder="********" required="required"><br><br></td>
-                    </tr>
-				     <tr>
-						   <td align="center" valign="top" colspan="2">
-                           		<input type="submit" value="login" name="login">
-                                <input type="reset" value="clear" name="reset">
-                            </td>
+		   <div class="login-box">
+                	<div class="box-header">
+            			<h2>Login</h2>
+            		</div>     
+		   <table align="center" border="0" cellspacing="0">
+			<tr>
+                   	 <td align="center" valign="top"><label style="font-family:Verdana,sans-serif; font-size:14px">USER NAME </label></td>
+			 <td><input type="text" name="username" placeholder="username" autofocus="autofocus" required="required"></td>
+                        </tr>
+                        <tr>
+			 <td align="center" valign="top"><label style="font-family:Verdana,sans-serif; font-size:14px">PASSWORD </label></td>
+			 <td><input type="password" name="password" placeholder="********" required="required"></td>
+                        </tr>
+			<tr>
+			 <td align="center" valign="top" colspan="2">
+                         <input type="submit" value="login" name="login" onMouseOver="validate()">
+                         <input type="reset" value="clear" name="reset">
+                         </td>
                 	</tr>
-                    <tr>
-                   <td colspan="2"><h4 align="center">
-            		<a href="http://cs99.bradley.edu/~bgalla/Assignment1/Forgotpassword.html" target="_self"><u font-family:Verdana,sans-serif>Forgot password?</u></a></h4>
-                   </td> </tr><br>
-              </table>
-           </fieldset>
-           <h5 align="center"><u style="color:#CCC; font-family:Verdana,sans-serif">New User?</u>
-            <a href="RegistrationForm.html" target="_self">
+                    </table>
+                   	<h4 align="center">
+            			<a href="http://cs99.bradley.edu/~bgalla/Assignment1/Forgotpassword.html" target="_self"><u font-family:Verdana,sans-serif>Forgot password?</u></a></h4>         
+           		<h5 align="center"><u style="font-family:Verdana,sans-serif">New User?</u>
+            			<a href="RegistrationForm.html" target="_self">
 			<input type="button" value="Signup" name="signup"></a></h5>
- 	
+ 		   </div>
+</form>
+	<br>
+	<br>
+	<hr>
+	<div id="eve">
+	<section id = "1">
+		<h2>Events</h2>
+		<h3>Jake Owen</h3>
+		<h4><em>Illinois State Fairgrounds Il State Fair, Springfield, IL
+			Sun, Aug 14, 2016 07:30 PM</em></h4>
+		<figure>
+			<img src = "http://cs99.bradley.edu/~bgalla/Assignment1/images/165051a.jpg" alt = "Jake Owen" />
+			<figcaption><em>Jake Owen</em></figcaption>
+		</figure>
+		<article>
+			<header>
+				<h5>Get
+				<em>
+				<a href = "http://www.ticketmaster.com/jake-owen-springfield-illinois-08-14-2016/event/070050ACD52E6BEB?artistid=1062351&majorcatid=10001&minorcatid=2">
+				Music tickets...</a>
+				</em>
+				</h5>
+			</header>
+		</article>
+		<hr>
+		<h3>The Avett Brothers</h3>
+		<h4><em>Peoria Civic Center, Peoria, IL
+			Sat, Sep 10, 2016 08:00 PM</em></h4>
+		<figure>
+			<img src = "http://cs99.bradley.edu/~bgalla/Assignment1/images/2nd.jpg" alt = "Jake Owen" />
+			<figcaption><em>The Avett Brothers</em></figcaption>
+		</figure>
+		<article>
+			<header>
+				<h5>Get
+				<em>
+				<a href = "http://www.ticketmaster.com/the-avett-brothers-peoria-illinois-09-10-2016/event/070050A2F37E4C7D?artistid=1108947&majorcatid=10001&minorcatid=2">
+				Music tickets...</a>
+				</em>
+				</h5>
+			</header>
+		</article>
+
+	</section>
+	<div id="#" align="center"><img id = "image" src = "http://cs99.bradley.edu/~bgalla/Assignment1/r1.png" alt = "Beam"></div>
+	<footer align="right"> <p id="demo" ></p>
+	<h6>&copy; 2016-2017 by Music Club &amp; Associ<wbr>ates, Inc.
+	All Rights Reserved.</h6>
+	<address>
+		<h5>Contact us at <a href = "mailto:mc@musicclub.com">mc@musicclub.com</a></h5>
+ 	</address>
+	</footer>
+	</div>
+	</div>
 	</body>
+
 </html>

@@ -70,3 +70,28 @@ Date of Birth:Aug,4 1980
 Phone no: (333)-567-2345
 Address:Gudivada
 
+Username:Babji
+Password:Babji@123
+Email-id:ramanujarao777@gmail.com
+Gender:Male
+Date of Birth:Jul,7 1970
+Phone no: (345)-333-4567
+Address:Gudivada
+
+Username:abcdefgh
+Password:Password@123
+Email-id:abc@gmail.com
+Gender:Male
+Date of Birth:jan,17 1985
+Phone no: (122)-323-1111
+Address:aa
+
+Username:gallab1111
+Password:Bgalla@123
+Email-id:bgalla@mail.bradley.edu
+Gender:Male
+Date of Birth:jan,15 1986
+Phone no: (122)-222-4566
+Address:a
+
+

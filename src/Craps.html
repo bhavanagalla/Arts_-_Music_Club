@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Craps Game Simulation</title>
+	<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/samplecss.css" rel="stylesheet" type="text/css" />
+	<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/snow.css" rel="stylesheet" type="text/css" />
+	<link href="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon.png" rel="icon" type="image/x-icon" />
+	<script src = "http://cs99.bradley.edu/~bgalla/Assignment1/js/RandomPicture.js"></script>
+	<script type="text/javascript">
+  		$(function() {
+  			if ($.browser.msie && $.browser.version.substr(0,1)<7)
+  			{
+   				 $('li').has('ul').mouseover(function(){
+       				 $(this).children('ul').css('visibility','visible');
+        			 }).mouseout(function(){
+        					$(this).children('ul').css('visibility','hidden');
+        						})
+  							}
+			});
+		function myFunction() {
+    			location.reload();
+		}
+
+	</script>
+	<style>
+	.centre {
+    	margin-left: auto;
+    	margin-right: auto;
+    	display: block
+	}
+	</style>
+
+      <style type = "text/css">
+         p.red  { color: red }
+         img    { width: 54px; height: 54px; }
+         pointDiv.center    { border: 5px ridge royalblue; 
+                  padding: 10px; width: 120px; 
+                  margin-bottom: 10px;margin-left: auto;
+    			margin-right: auto;
+ 		}
+	rollDiv.center    { border: 5px ridge royalblue; 
+                  padding: 10px; width: 120px; 
+                  margin-bottom: 10px;margin-left: auto;
+    			margin-right: auto;
+ 		}
+
+         .point { margin: 0px; }
+      </style>
+      <script>
+         // variables used to refer to page elements
+         var pointDie1Img; // refers to first die point img
+         var pointDie2Img; // refers to second die point img
+         var rollDie1Img; // refers to first die roll img
+         var rollDie2Img; // refers to second die roll img
+         var messages; // refers to "messages" paragraph
+         var playButton; // refers to Play button
+         var rollButton; // refers to Roll button
+         var dicerolling; // refers to audio clip for dice
+
+         // other variables used in program
+         var myPoint; // point if no win/loss on first roll
+         var die1Value; // value of first die in current roll
+         var die2Value; // value of second die in current roll
+
+         // starts a new game
+         function startGame() 
+         {
+            // get the page elements that we'll interact with
+            dicerolling = document.getElementById( "dicerolling" );
+            pointDie1Img = document.getElementById( "pointDie1" );
+            pointDie2Img = document.getElementById( "pointDie2" );
+            rollDie1Img = document.getElementById( "rollDie1" );
+            rollDie2Img = document.getElementById( "rollDie2" );
+            messages = document.getElementById( "messages" );
+            playButton = document.getElementById( "play" );
+            rollButton = document.getElementById( "roll" );
+
+            // prepare the GUI
+            rollButton.disabled = true; // disable rollButton
+            setImage( pointDie1Img ); // reset image for new game
+            setImage( pointDie2Img ); // reset image for new game
+            setImage( rollDie1Img ); // reset image for new game
+            setImage( rollDie2Img ); // reset image for new game
+
+            myPoint = 0; // there is currently no point 
+            firstRoll(); // roll the dice to start the game
+         } // end function startGame
+
+         // perform first roll of the game
+         function firstRoll()
+         {
+            var sumOfDice = rollDice(); // first roll of the dice
+
+            // determine if the user won, lost or must continue rolling
+            switch (sumOfDice) 
+            {
+               case 7: case 11: // win on first roll
+                  messages.innerHTML = 
+                     "You Win!!! Click Play to play again.";
+                  break;
+               case 2: case 3: case 12: // lose on first roll
+                  messages.innerHTML = 
+                     "Sorry. You Lose. Click Play to play again.";
+                  break;
+               default: // remember point
+                  myPoint = sumOfDice;
+                  setImage( pointDie1Img, die1Value );
+                  setImage( pointDie2Img, die2Value );
+                  messages.innerHTML = "Roll Again!";
+                  rollButton.disabled = false; // enable rollButton
+                  playButton.disabled = true; // disable playButton
+                  break;
+            } // end switch
+         } // end function firstRoll
+
+         // called for subsequent rolls of the dice
+         function rollAgain()
+         {
+            var sumOfDice = rollDice(); // subsequent roll of the dice
+
+            if (sumOfDice == myPoint) 
+            {
+               messages.innerHTML =
+                  "You Win!!! Click Play to play again.";
+               rollButton.disabled = true; // disable rollButton
+               playButton.disabled = false; // enable playButton
+            } // end if
+            else if (sumOfDice == 7) // craps
+            {
+               messages.innerHTML = 
+                  "Sorry. You Lose. Click Play to play again.";
+               rollButton.disabled = true; // disable rollButton
+               playButton.disabled = false; // enable playButton
+            } // end else if
+         } // end function rollAgain
+
+         // roll the dice
+         function rollDice() 
+         {
+            dicerolling.play(); // play dice rolling sound
+
+            // clear old die images while rolling sound plays
+            die1Value = NaN;
+            die2Value = NaN;
+            showDice();
+	    
+            die1Value = Math.floor(1 + Math.random() * 6);
+            die2Value = Math.floor(1 + Math.random() * 6);
+            return die1Value + die2Value;
+         } // end function rollDice
+
+         // display rolled dice
+         function showDice()
+         {
+            setImage( rollDie1Img, die1Value );
+            setImage( rollDie2Img, die2Value );
+         } // end function showDice
+
+         // set image source for a die
+         function setImage( dieImg, dieValue ) 
+         {
+            if ( isFinite( dieValue ) )
+               dieImg.src = "die" + dieValue + ".png";
+            else
+               dieImg.src = "blank.png";
+         } // end function setImage
+
+         // register event liseners
+         function start()
+         {
+            var playButton = document.getElementById( "play" );
+            playButton.addEventListener( "click", startGame, false );
+            var rollButton = document.getElementById( "roll" );
+            rollButton.addEventListener( "click", rollAgain, false );
+            var diceSound = document.getElementById( "dicerolling" );
+            diceSound.addEventListener( "ended", showDice, false );
+         } // end function start
+
+         window.addEventListener( "load", start, false );
+      </script>
+   </head>
+  <body bgcolor="#222222" display="block">
+	<div id="snow">
+
+<h2 align="center" style="color:#FFF;font-family:Jokerman;font-size:32px"> MUSIC &#9835;  CLUB</h2>
+<ul id="menu">
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html" target="_top">Home</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/RegistrationForm.html" target="_top">Register</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/LoginForm.html" target="_top">Login</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Aboutus.html" target="_top">About</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Contact.html">Contact</a></li>
+    <li>
+        <a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">More..</a>
+        <ul>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Draw.html">Draw Canvas</a></li>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/table.html">Funds</a></li>
+	    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">Games</a>
+		<ul>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Craps.html">Craps Game</a></li>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Game.html">Pacman Game</a></li>
+		</ul>
+	    </li>
+	</ul>
+      </li>
+</ul>
+    	<div id="#" align="center"><img id = "image" src = "http://cs99.bradley.edu/~bgalla/Assignment1/r1.png" alt = "Beam"></div>
+      <audio id = "dicerolling" preload = "auto">
+         <source src = "http://cs99.bradley.edu/~bgalla/Assignment1/audio/dicerolling.mp3"
+            type = "audio/mpeg">
+          Browser does not support audio tag</audio>
+<form name=1>
+	<h3 align="center" style="color: #FF5959; font-family: "Brush Script MT", cursive; font-size:22px">Craps Game</h3>
+      <div id = "pointDiv" align="center">
+         <p class = "point" style="color:#CCC; font-family:Verdana,sans-serif; font-size:12px">Point is:</p>
+         <img id = "pointDie1" src = "blank.png"  
+            alt = "Die 1 of Point Value">
+         <img id = "pointDie2" src = "blank.png"
+            alt = "Die 2 of Point Value">
+      </div>
+
+      <div class = "rollDiv" align="center">
+	<p class = "point" style="color:#CCC; font-family:Verdana,sans-serif; font-size:12px">Dice are:</p>
+         <img id = "rollDie1" src = "blank.png" 
+            alt = "Die 1 of Roll Value">
+         <img id = "rollDie2" src = "blank.png" 
+            alt = "Die 2 of Roll Value">
+      </div>
+	
+      <form action = "#">
+	<table align="center" border="0" cellspacing="0">
+         <tr><td><input id = "play" type = "button" value = "Play">
+         <input id = "roll" type = "button" value = "Roll" disabled></td></tr>
+	</table>
+      </form>
+	
+      <p id = "messages" class = "red" align="center">Click Play to start the game</p>
+	<table align="center" border="0" cellspacing="0">
+		<tr><td><button onclick="myFunction()">Start a new Game</button></td></tr>
+         </table>
+<p  align="center" style="color:#6495ED; font-family:Verdana,sans-serif; font-size:16px">A short video explaining the basic Craps rules</p>
+	<video width="400" class="centre" controls>
+  <source src="http://cs99.bradley.edu/~bgalla/Assignment1/video/CrapsRules.mp4" type="video/mp4">
+</video></td>
+
+</form>
+   </body>
+</html>

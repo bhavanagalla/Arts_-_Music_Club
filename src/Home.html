@@ -3,65 +3,188 @@
 <head>
 <meta charset="utf-8">
 <title>Music Club</title>
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/samplecss.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/snow.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/slidecss.css" rel="stylesheet" type="text/css" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon.png" rel="icon" type="image/x-icon" />
+<link href="http://cs99.bradley.edu/~bgalla/Assignment1/css/events.css" rel="stylesheet" type="text/css" />
+
+<script src = "http://cs99.bradley.edu/~bgalla/Assignment1/js/RandomPicture.js"></script>
+<script src = "http://cs99.bradley.edu/~bgalla/Assignment1/js/slideshow.js"></script>
+<script type="text/javascript">
+  $(function() {
+  if ($.browser.msie && $.browser.version.substr(0,1)<7)
+  {
+    $('li').has('ul').mouseover(function(){
+        $(this).children('ul').css('visibility','visible');
+        }).mouseout(function(){
+        $(this).children('ul').css('visibility','hidden');
+        })
+  }
+}); 
+</script>
 <style>
+input[type=submit],input[type=reset],input[type=button] {
+	margin-top: 0px;
+	border: 0;
+	border-radius: 2px;
+	color: white;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 0.7em;
+	color:#FFF;
+	letter-spacing: 1px;
+	background-color: #191614;
+	cursor:pointer;
+	outline: none;
+}
 body {
-  background-color: #EBE8E4;
-  color: #222;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  font-size: 15px;
- overflow-x:hidden;
-background-size: cover;
-background-position: top center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-overflow:hidden;
-
-  
+    overflow-x:hidden;
 }
 
-nav {
-  background-color: #fff;
-  border: 1px solid #dedede;
-  border-radius: 4px;
-  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
-  color: #888;
-  display: block;
-  margin: 8px 22px 8px 22px;
-  overflow: hidden;
-  width: 98%; 
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-}
-nav ul li {
-  display: inline-block;
-  list-style-type: none;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s; 
-}
+#.centre {
+    	margin-left: auto;
+    	margin-right: auto;
+    	display: block;
+	top: 20px;
+	}
 
 </style>
 </head>
 
-<body background="http://cs99.bradley.edu/~bgalla/Assignment1/images/Homepagepic7.jpg" bgproperties="width=:100%; height:100%">
+<body background="http://cs99.bradley.edu/~bgalla/Assignment1/images/favicon2.jpg" bgproperties="width=:100%; height:100%" display="block">
+<div id="snow">
+
 <h2 align="center" style="color:#FFF;font-family:Jokerman;font-size:32px"> MUSIC &#9835;  CLUB</h2>
-<nav>
-	<ul>
-		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html" target="_top">Home</a></li>&nbsp;&nbsp;
-		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/LoginForm.html" target="iframe1">Login</a></li>&nbsp;&nbsp;
-		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/RegistrationForm.html" target="iframe1">Register</a></li>&nbsp;&nbsp;
-        <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Aboutus.html" target="iframe1">About us</a></li>
-        
+<ul id="menu">
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html" target="_top">Home</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/RegistrationForm.html" target="_top">Register</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/LoginForm.html" target="_top">Login</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Aboutus.html" target="_top">About</a></li>
+    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Contact.html">Contact</a></li>
+    <li>
+        <a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">More..</a>
+        <ul>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Draw.html">Draw Canvas</a></li>
+            <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/table.html">Funds</a></li>
+	    <li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Home.html">Games</a>
+		<ul>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Craps.html">Craps Game</a></li>
+            		<li><a href="http://cs99.bradley.edu/~bgalla/Assignment1/Game.html">Pacman Game</a></li>
+		</ul>
+	    </li>
 	</ul>
-</nav>
-	<h2 align="center" style="color:#FFF;font-size:32px">&#9834;</h2>
-	      <iframe name="iframe1" id='iframe1' style="overflow: hidden; height: 100%; width:99%; position: absolute; alignment-adjust:central" scrolling="no" frameborder="0" ></iframe>
-    
+      </li>
+</ul>
+<time><h6 id="demo" ></h6></time>
+			<script>
+				document.getElementById("demo").innerHTML = Date();
+			</script>
+<div class="container">
+</div>
+<div id="#" align="center">
+<div class="content display-container" style="max-width:800px" >
+    <img class="mySlides" src="http://cs99.bradley.edu/~bgalla/Assignment1/images/n14.jpg" style="width:100%">
+  <img class="mySlides" src="http://cs99.bradley.edu/~bgalla/Assignment1/images/2.gif" style="width:100%">
+  <img class="mySlides" src="http://cs99.bradley.edu/~bgalla/Assignment1/images/n12.gif" style="width:100%">
+  <img class="mySlides" src="http://cs99.bradley.edu/~bgalla/Assignment1/images/n13.gif" style="width:100%">
+  <img class="mySlides" src="http://cs99.bradley.edu/~bgalla/Assignment1/images/n5.gif" style="width:100%">  
+  <img class="mySlides" src="http://cs99.bradley.edu/~bgalla/Assignment1/images/n11.gif" style="width:100%">
+  <div class="center section large text-white display-bottomleft" style="width:100%">
+    <div class="left padding-left hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="right padding-right hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="badge demo border transparent hover-white" onclick="currentDiv(1)"></span>
+    <span class="badge demo border transparent hover-white" onclick="currentDiv(2)"></span>
+    <span class="badge demo border transparent hover-white" onclick="currentDiv(3)"></span>
+    <span class="badge demo border transparent hover-white" onclick="currentDiv(4)"></span>
+    <span class="badge demo border transparent hover-white" onclick="currentDiv(5)"></span>
+    <span class="badge demo border transparent hover-white" onclick="currentDiv(6)"></span>
+
+  </div>
+</div>
+</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " white";
+}
+</script>
+<br>
+	<br>
+	<hr>
+	<div id="eve">
+	<section id = "1">
+		<h2>Events</h2>
+		<h3>Jake Owen</h3>
+		<h4><em>Illinois State Fairgrounds Il State Fair, Springfield, IL
+			Sun, Aug 14, 2016 07:30 PM</em></h4>
+		<figure>
+			<img src = "http://cs99.bradley.edu/~bgalla/Assignment1/images/165051a.jpg" alt = "Jake Owen" />
+			<figcaption><em>Jake Owen</em></figcaption>
+		</figure>
+		<article>
+			<header>
+				<h5>Get
+				<em>
+				<a href = "http://www.ticketmaster.com/jake-owen-springfield-illinois-08-14-2016/event/070050ACD52E6BEB?artistid=1062351&majorcatid=10001&minorcatid=2">
+				Music tickets...</a>
+				</em>
+				</h5>
+			</header>
+		</article>
+		<hr>
+		<h3>The Avett Brothers</h3>
+		<h4><em>Peoria Civic Center, Peoria, IL
+			Sat, Sep 10, 2016 08:00 PM</em></h4>
+		<figure>
+			<img src = "http://cs99.bradley.edu/~bgalla/Assignment1/images/2nd.jpg" alt = "Jake Owen" />
+			<figcaption><em>The Avett Brothers</em></figcaption>
+		</figure>
+		<article>
+			<header>
+				<h5>Get
+				<em>
+				<a href = "http://www.ticketmaster.com/the-avett-brothers-peoria-illinois-09-10-2016/event/070050A2F37E4C7D?artistid=1108947&majorcatid=10001&minorcatid=2">
+				Music tickets...</a>
+				</em>
+				</h5>
+			</header>
+		</article>
+
+	</section>
+	<div id="#" align="center"><img id = "image" src = "http://cs99.bradley.edu/~bgalla/Assignment1/r1.png" alt = "Beam"></div>
+	<footer align="right"> <p id="demo" ></p>
+	<h6>&copy; 2016-2017 by Music Club &amp; Associ<wbr>ates, Inc.
+	All Rights Reserved.</h6>
+	<address>
+		<h5>Contact us at <a href = "mailto:mc@musicclub.com">mc@musicclub.com</a></h5>
+ 	</address>
+	</footer>
+	</div>
+	</div>
+
 </body>
 </html>

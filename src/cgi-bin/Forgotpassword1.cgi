@@ -44,7 +44,7 @@ if($send eq "success")
 	print $cgi->start_html( 
         	-title    => "Welcome To Music Club",			
 		
-		-text=>"white"
+		-text=>"black"
 		
         ),
 	$cgi->h2(" Your login details are sent to your mail"),
@@ -63,7 +63,7 @@ else
 	print $cgi->start_html( 
         	-title    => "Welcome To Music Club",			
 		
-		-text=>"white"
+		-text=>"black"
 		
         ),
 	$cgi->h2(" Sorry! This email-Id is not registered"),
