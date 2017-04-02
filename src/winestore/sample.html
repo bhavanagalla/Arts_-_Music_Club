@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form  method="get"  >
+<?php
+require 'db.inc';
+$query='select wine_id,wine_name from wine';
+$res- = mysql_query ($query) or die (mysql_error());
+?>
+<select name="exa" >
+    <?php
+   while($inf = mysql_fetch_array($res)){
+		echo '<option value="'.$inf["wine_id"].'">'.$inf["wine_name"].'</option>';
+			}
+	    ?>
+</select>
+<input type="submit" value="GO!"  name="go"/>
+
+</form>
+</body>
+</html>

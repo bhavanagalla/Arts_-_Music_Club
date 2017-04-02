@@ -70,7 +70,7 @@ my $filename = 'password.txt';
 my $filenamefp = 'Forgotpassword.txt';
 my $filenamesur = 'singleuserreginfo.txt';
 my $registerfile='registerinfo.txt';
-
+my $usermail='usermail.txt';
 
 #opening password.txt
 
@@ -91,6 +91,13 @@ print $fi "$email $username $password\n";
 
 close $fi;
 
+#opening usermail.txt
+
+open(my $um, '>>', $usermail) or die "Could not open file usermail.txt !";
+
+print $um "$username $email\n";
+
+close $um;
 
 #opening singleuserreginfo.txt
 

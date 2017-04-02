@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 use strict; 
+use warnings;
 use CGI; 
 use Fcntl qw(:flock);
 
@@ -9,7 +10,10 @@ my $cgi = new CGI;
 my $username = $cgi->param( "username" );
 my $password = $cgi->param( "password" ); 
 
+my $email;
+
 my $login = "fail";
+my $elogin = "fail";
 my $salt = "21";
 my $enpass = crypt($password,$salt);
 open(PASSWORDDATA, "<password.txt") or die "Can not open password.txt";
@@ -59,6 +63,58 @@ print $lsi "Your username:$username\n";
 print $lsi "Your password:$enpass\n";
 
 close $lsi;
+
+
+
+open(FORGOTDATA, "<usermail.txt") or die "Can not open usermail.txt";
+
+    
+#Read in the data from the usermail.txt file
+break: while(<FORGOTDATA>)
+{
+	my $line = $_;
+	my @emailname = split(' ',$line);
+	if($emailname[0] eq $username)
+	{
+	  $email=$emailname[1];
+	  $elogin="success";
+	     
+	last break;
+	}
+		  
+}
+close(FORGOTDATA);
+#opening singlelogin.txt
+my $singlelogin = 'singlelogin.txt';
+open(my $sl, '+>', $singlelogin) or die "Could not open file singlelogin.txt !";
+
+		print $sl "$username $email\n";
+		close $sl;
+
+if($elogin eq "success")
+{		
+	print $cgi->header( "text/html" ),
+	$cgi->start_html(
+		-title    => "Welcome To Music Club",
+       		-text=>"black"
+		),
+	$cgi->h2("email id success $email"),
+	$cgi->end_html;
+	exit;
+ 
+}
+else
+{
+print $cgi->header( "text/html" ),
+	$cgi->start_html(
+		-title    => "Welcome To Music Club",
+       		-text=>"black"
+		),
+	$cgi->h2("email id fail"),
+	$cgi->end_html;
+	exit;
+
+}
 
 # creates the Other page
 sub displayOtherHTMLPage {

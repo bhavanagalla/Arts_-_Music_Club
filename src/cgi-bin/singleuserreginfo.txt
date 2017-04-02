@@ -1,8 +1,8 @@
-Username:111111111
-Password:Password@123
-Email-id:bhavanabonny@gmail.com
-Gender:Male
-Date of Birth:Feb,4 1971
-Phone no: (444)-233-3333
-Address:dddd
+Username:Himaja
+Password:Bonny@123
+Email-id:bhavanagalla777@gmail.com
+Gender:Female
+Date of Birth:Apr,7 1994
+Phone no: (309)-555-1111
+Address:Peoria
 

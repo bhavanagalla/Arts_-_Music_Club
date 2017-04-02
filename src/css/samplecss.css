@@ -46,11 +46,11 @@
     color: #fafafa;
 }
 
-*html #menu li a:hover {    color: #fafafa;
+*html #menu li a:hover {     color: #fafafa;
 }
 #menu ul {
     margin: 20px 0 0 0;
-    _margin: 0;    opacity: 0;
+    _margin: 0;     opacity: 0;
     visibility: hidden;
     position: absolute;
     top: 38px;
@@ -73,14 +73,16 @@
     top: 0;
     left: 150px;
     margin: 0 0 0 20px;
-    _margin: 0;    box-shadow: -1px 0 0 rgba(255,255,255,.3);      
+    _margin: 0; 
+    box-shadow: -1px 0 0 rgba(255,255,255,.3);      
 }
 
 #menu ul li {
     float: none;
     display: block;
     border: 0;
-    _line-height: 0;   box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+    _line-height: 0; 
+    box-shadow: 0 1px 0 #111, 0 2px 0 #666;
 }
 
 #menu ul li:last-child {   
@@ -90,7 +92,8 @@
 #menu ul a {    
     padding: 10px;
     width: 130px;
-    _height: 10px;    display: block;
+    _height: 10px;
+    display: block;
     white-space: nowrap;
     float: none;
     text-transform: none;

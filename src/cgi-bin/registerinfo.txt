@@ -95,3 +95,123 @@ Phone no: (122)-222-4566
 Address:a
 
 
+Username:111111
+Password:Password@123
+Email-id:abc@gmail.com
+Gender:Male
+Date of Birth:jan,19 1986
+Phone no: (111)-111-1111
+Address:a
+
+Username:bgalla
+Password:Password@123
+Email-id:bhavanabonny@gmail.com
+Gender:Male
+Date of Birth:jan,1 1973
+Phone no: (123)-111-4444
+Address:bb
+
+Username:bgalla
+Password:Password@123
+Email-id:bhavanabonny@gmail.com
+Gender:Male
+Date of Birth:Feb,18 1986
+Phone no: (111)-111-1111
+Address:ddd
+
+Username:bgalla
+Password:Password@123
+Email-id:bhavanabonny@gmail.com
+Gender:Male
+Date of Birth:Feb,18 1986
+Phone no: (111)-111-1111
+Address:ddd
+
+Username:bgalla
+Password:Password@123
+Email-id:bhavanabonny@gmail.com
+Gender:Male
+Date of Birth:Feb,18 1986
+Phone no: (111)-111-1111
+Address:ddd
+
+Username:ntabassum
+Password:Password@123
+Email-id:bhavanabonny@gmail.com
+Gender:Male
+Date of Birth:Feb,26 1986
+Phone no: (123)-111-1111
+Address:rrr
+
+Username:nssswwwwwww
+Password:Password@123
+Email-id:bhavanabonny@gmail.com
+Gender:Male
+Date of Birth:jan,15 1984
+Phone no: (222)-111-1111
+Address:dd
+
+Username:abcdefgh
+Password:Password@123
+Email-id:abc@gmail.com
+Gender:Male
+Date of Birth:jan,17 1985
+Phone no: (122)-323-1111
+Address:aa
+
+Username:abcdefgh
+Password:Password@123
+Email-id:abc@gmail.com
+Gender:Male
+Date of Birth:jan,17 1985
+Phone no: (122)-323-1111
+Address:aa
+
+Username:bgalla1111
+Password:Bgalla@123
+Email-id:bgalla@mail.bradley.edu
+Gender:Male
+Date of Birth:jan,15 1986
+Phone no: (122)-222-4566
+Address:a
+
+Username:Bradley
+Password:Nagam@123
+Email-id:hnagam@mail.bradley.edu
+Gender:Female
+Date of Birth:Feb,14 1985
+Phone no: (111)-111-3333
+Address:Peoria
+
+Username:Bradley
+Password:Hnagam@123
+Email-id:hnagam@mail.bradley.edu
+Gender:Female
+Date of Birth:Feb,14 1985
+Phone no: (111)-111-3333
+Address:Peoria
+
+Username:Nannnny
+Password:Nanny@123
+Email-id:bhavanabonny@gmail.com
+Gender:Male
+Date of Birth:jan,17 1988
+Phone no: (333)-444-4455
+Address:ggds
+
+Username:Nannnny
+Password:Password@123
+Email-id:bhavanabonny@gmail.com
+Gender:Male
+Date of Birth:jan,17 1988
+Phone no: (333)-444-4455
+Address:ggds
+
+Username:Himaja
+Password:Bonny@123
+Email-id:bhavanagalla777@gmail.com
+Gender:Female
+Date of Birth:Apr,7 1994
+Phone no: (309)-555-1111
+Address:Peoria
+
