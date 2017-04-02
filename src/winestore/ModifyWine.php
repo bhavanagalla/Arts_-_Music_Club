@@ -125,7 +125,9 @@ echo "$email<br>";
 	$to = $email;
 	$from="noreply@music.com";
 	$subject = "Wine Store";
-	$body = "Hi,".$username.".Record modified successfully!!!- " . $subject;
+	$body = "Hi,".$username.".Record modified successfully completed!!!
+		
+		- " . $subject;
  
  	if (mail($to, $from,$subject, $body)) {
    		echo("<p>Message successfully sent!</p>");
