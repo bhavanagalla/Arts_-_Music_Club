@@ -1,0 +1,72 @@
+Username:Skoppili
+Password:Suma@1234
+Email-id:bgalla@mail.bradley.edu
+Gender:Female
+Date of Birth:jan,1 1970
+Phone no: (567)-555-3333
+Address:Peoria
+
+Username:Bhavana
+Password:Bhavana@123
+Email-id:bhavanagalla777@gmail.com
+Gender:Female
+Date of Birth:Dec,14 1993
+Phone no: (456)-345-1234
+Address:Peoria
+
+Username:Himajan
+Password:Nagam@123
+Email-id:hnagam@mail.bradley.edu
+Gender:Female
+Date of Birth:Sep,27 1992
+Phone no: (345)-672-2456
+Address:Peoria
+
+Username:gallabhavana
+Password:Galla@123
+Email-id:bgalla@mail.bradley.edu
+Gender:Female
+Date of Birth:Sep,5 1985
+Phone no: (666)-666-8889
+Address:Peoria
+
+Username:PoojiJ
+Password:Poojij@123
+Email-id:poojita20@gmail.com
+Gender:Female
+Date of Birth:Oct,20 1993
+Phone no: (345)-345-1234
+Address:Peoria
+
+Username:nanny
+Password:Nanny@777
+Email-id:namrathananny@gmail.com
+Gender:Female
+Date of Birth:Oct,26 1995
+Phone no: (765)-896-1234
+Address:India
+
+Username:shashi
+Password:Shashi@123
+Email-id:shashican19@gmail.com
+Gender:Male
+Date of Birth:May,19 1992
+Phone no: (771)-345-1430
+Address:california
+
+Username:Suma
+Password:Suma@1234
+Email-id:bhavanabonny@gmail.com
+Gender:Female
+Date of Birth:Jul,19 1992
+Phone no: (456)-345-3335
+Address:Peoria
+
+Username:Madhu
+Password:Madhu@123
+Email-id:jpoojita@hotmail.com
+Gender:Female
+Date of Birth:Aug,4 1980
+Phone no: (333)-567-2345
+Address:Gudivada
+

@@ -1,0 +1,8 @@
+Username:Madhu
+Password:Madhu@123
+Email-id:jpoojita@hotmail.com
+Gender:Female
+Date of Birth:Aug,4 1980
+Phone no: (333)-567-2345
+Address:Gudivada
+

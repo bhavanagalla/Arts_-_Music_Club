@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Registration form</title>
+</head>
+<body display="block">
+<form action="http://cs99.bradley.edu/~bgalla/Assignment1/cgi-bin/registerinfoindb2.cgi" method="post"  name="Register" id="Register" >
+			<fieldset>
+				<legend align="center" ><h4 style="color:#CCC; font-family:Verdana,sans-serif; font-size:16px">Registration Form</h4></legend>
+				<table border="0" cellspacing="0" align="center">
+					<tr>
+						<td><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">NAME</lable></td>
+						<td><input type="text" name="username" pattern="[[a-zA-Z][a-zA-Z]]*{1,25}$" placeholder="Name" required="Enter your name" autofocus="autofocus"><br></td>
+					</tr>
+					<tr>
+						<td><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">PASSWORD</lable></td>
+						<td><input type="Password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="**Aa@1**" required="required"><br></td>
+					</tr>
+                    <tr>
+						<td><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">CONFORM PASSWORD</lable></td>
+						<td><input type="Password" name="cpassword" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="**Aa@1**" required="required"><br></td>
+                   </tr>
+					<tr>
+						<td><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">EMAIL-ID:</lable></td>
+						<td><input type="text" name="email" pattern="[^ @]*@[^ @]*" placeholder="example@domain.com" required="required"><br></td>
+					</tr>
+                    <tr>
+						<td><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">CONFORRM EMAIL-ID</lable></td>
+						<td><input type="text" name="cemail" pattern="[^ @]*@[^ @]*" placeholder="example@domain.com" required="required"><br></td>
+                   </tr>
+                  <tr>
+						<td align="center" valign="top" colspan="2">				     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="receivemail" value="receivemail" checked required="required">
+                        <labe style="color:#CCC; font-family:Verdana,sans-serif; font-size:13px">I want to receive emails</labe>
+						</td>
+					</tr>
+					<tr>
+						<td><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">PHONE NO</lable></td>
+						<td>(
+						  <input name="phone-1" type="tel" pattern="\d{3}" placeholder="555"  size="1" maxlength="3" required="required" />
+)
+						  <input name="phone-2" type="tel" pattern="\d{3}" placeholder="555" size="1" maxlength="3"required="required" />
+-
+						  <input name="phone-3" type="tel" pattern="\d{4}" placeholder="5555" size="1" maxlength="4" required="required"><br></td>
+                       	 
+					</tr>
+					<tr>
+						<td><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">GENDER</lable></td>
+						<td><input type="Radio" name="r1" id="m" value="Male" checked="checked">
+							<lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:13px">Male</lable> &nbsp;
+						    <input type="Radio" name="r1" id="f" value="Female">
+							<lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:13px">Female</lable> &nbsp;</td>
+					</tr>
+					<tr>
+						<td><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">DATE OF BIRTH</lable></td>
+						<td>
+                        	 <select name="month"required="required" >
+						              	<optgroup label="MONTH">
+											<option value="jan">January</option>
+											<option value="Feb">February</option>
+											<option value="Mar">March</option>
+											<option value="Apr">April</option>
+											<option value="May">May</option>
+											<option value="Jun">June</option>
+											<option value="Jul">July</option>		
+											<option value="Aug">August</option>
+											<option value="Sep">September</option>
+											<option value="Oct">October</option>
+											<option value="Nov">November</option>
+											<option value="Dec">December</option>
+                            			</optgroup>
+						     </select>
+                             &nbsp;
+						  <select name="date" required="required">
+										<optgroup label="DATE">
+											<script language="javascript">
+												for(i=1;i<31;i++)
+												document.write("<option>"+i+"</option>");
+											</script>
+                            			</optgroup>
+						  </select>
+						     
+						    &nbsp;
+						  <select name="year" required="required">
+										<optgroup label="YEAR">
+										<script language="javascript">
+											for(i=1970;i<=2010;i++)
+												document.write("<option>"+i+"</option>");
+										</script>
+                            			</optgroup>
+						   </select>
+						      
+						</td>
+					</tr>
+					<tr>
+						<td><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">ADDRESS</lable></td>
+						<td><textarea name="address" rows="4" cols="30" placeholder="Address" required="required"></textarea></td>
+					</tr>
+					
+					<tr>
+						<td valign="top"><lable style="color:#CCC; font-family:Verdana,sans-serif; font-size:14px">
+                        <labe style="color:#CCC; font-family:Verdana,sans-serif; font-size:13px">UPLOAD PHOTO</lable></td>
+						<td><input type="file" name="file" required="required"><br /><br /></td>
+					</tr>
+					<tr>
+						<td align="center" valign="top" colspan="2">
+                        	<input type="submit" name="rsubmit" value="submit">
+							<input type="reset" name="rreset" value="Reset">
+                        </td>
+					</tr>
+			</table>
+		</fieldset>
+        <h4 align="center"><u style="color:#CCC; font-family:Verdana,sans-serif; font-size:13px">Already have an account?</u>
+        <a href="LoginForm.html" target="_self">
+		<input type="button" value="Login" name="rlogin"></a></h4>
+       
+	</form>
+	</body>
+</html>
